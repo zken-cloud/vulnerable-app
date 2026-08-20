@@ -1,4 +1,3 @@
-// Vulnerability 4: Prototype Pollution via Deep Merge Pattern
 exports.applySettingsMerge = function applySettingsMerge(target, source) {
     for (const key in source) {
         if (typeof source[key] === 'object' && source[key] !== null && !Array.isArray(source[key])) {

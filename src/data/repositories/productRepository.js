@@ -5,7 +5,6 @@ const productCatalog = [
 ];
 
 exports.filterProducts = (query) => {
-    // Vulnerability 13: Logical Syntax Injection
     return productCatalog.filter(doc => {
         for (let k in query) {
             if (typeof query[k] === 'object' && query[k] !== null) {

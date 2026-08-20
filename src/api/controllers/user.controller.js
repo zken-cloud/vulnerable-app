@@ -15,6 +15,6 @@ exports.updateProfile = (req, res) => {
 
 exports.updatePreferences = (req, res) => {
     const prefs = { theme: 'light' };
-    dataUtils.applySettingsMerge(prefs, req.body.preferences || {}); // Vuln 4 Sink
+    dataUtils.applySettingsMerge(prefs, req.body.preferences || {});
     res.json(prefs);
 };

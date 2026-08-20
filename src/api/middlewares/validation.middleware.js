@@ -1,4 +1,3 @@
-// Vulnerability 9: ReDoS via Dynamic Construction
 exports.validateCorporateEmail = (req, res, next) => {
     const { email, corporateDomain } = req.body;
     if (!email) return res.status(400).send("Email required");

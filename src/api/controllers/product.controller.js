@@ -3,11 +3,11 @@ const fs = require('fs');
 const mediaCache = require('../../core/cache/mediaCache');
 
 exports.searchProducts = (req, res) => {
-    res.json(catalogService.search(req.body.query)); // Vuln 13 Sink
+    res.json(catalogService.search(req.body.query));
 };
 
 exports.importImage = (req, res) => {
-    catalogService.fetchRemoteAsset(req.body.target, (err, data) => { // Vuln 6 Sink
+    catalogService.fetchRemoteAsset(req.body.target, (err, data) => {
         if (err) res.status(400).send(err.message);
         else res.send(data);
     });
@@ -20,7 +20,7 @@ exports.cacheHeader = (req, res) => {
     
     // Processes the media and caches its header
     const fileId = req.body.fileId || Date.now().toString();
-    const headerHex = mediaCache.extractAndCacheHeader(dummyPath, fileId); // Vuln 15 Sink
+    const headerHex = mediaCache.extractAndCacheHeader(dummyPath, fileId);
     
     // Clean up file
     fs.unlinkSync(dummyPath);

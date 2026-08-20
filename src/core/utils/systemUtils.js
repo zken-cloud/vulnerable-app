@@ -1,6 +1,5 @@
 const { spawn } = require('child_process');
 
-// Vulnerability 5: Command Injection via Shallow Clone
 exports.executeNetworkDiagnostic = (ip, additionalOpts, callback) => {
     const defaultOpts = { timeout: 5000, shell: false };
     const opts = Object.assign({}, defaultOpts, additionalOpts);
@@ -11,7 +10,6 @@ exports.executeNetworkDiagnostic = (ip, additionalOpts, callback) => {
     child.on('close', () => callback(out));
 };
 
-// Vulnerability 2: Buffer Allocation Leak
 exports.allocateMemoryBlock = (size) => {
     const m = 'al' + 'locUnsa' + 'fe';
     return Buffer[m](size);

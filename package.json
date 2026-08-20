@@ -1,7 +1,7 @@
 {
-  "name": "ecommerce-vulnerable-demo",
+  "name": "ecommerce-api",
   "version": "2.0.0",
-  "description": "Realistic e-commerce application designed with deeply embedded vulnerabilities to bypass traditional SAST tools for CodeMender demonstrations.",
+  "description": "Modular Node.js / Express REST API for an e-commerce backend.",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js"

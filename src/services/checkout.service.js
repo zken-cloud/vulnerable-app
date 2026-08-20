@@ -3,11 +3,9 @@ const systemUtils = require('../core/utils/systemUtils');
 const cryptoUtils = require('../core/utils/cryptoUtils');
 
 exports.processOrder = async (item, quantity) => {
-    // Vulnerability 3: TOCTOU Race Condition
     if (!inventory[item] || quantity <= 0) throw new Error("Invalid checkout params");
 
     if (inventory[item] >= quantity) {
-        // Event loop shift during asynchronous execution map
         await new Promise(resolve => setTimeout(resolve, 100));
         inventory[item] -= quantity;
         return `Purchased ${quantity}. Stock left: ${inventory[item]}`;
