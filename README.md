@@ -1,4 +1,4 @@
-# Demo App: Vulnerable App (SAST Bypass)
+# CodeMender Demo: Vulnerable App (SAST Bypass)
 
 A Node.js application containing **13 intentional vulnerabilities** designed to evade detection by standard Static Application Security Testing (SAST) tools, specifically built for CodeMender demos. 
 
